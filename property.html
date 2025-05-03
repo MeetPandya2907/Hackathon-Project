@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="script.js"></script>
+    <script src="property.js"></script>
+</head>
+<body>
+    <div class="header-container">
+        <header>
+          <div class="top-nav">
+            <!-- Logo -->
+            <div class="logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png" alt="Airbnb">
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+              <div class="search-bar">
+                <div class="search-item">Anywhere</div>
+                <div class="search-divider"></div>
+                <div class="search-item">Any week</div>
+                <div class="search-divider"></div>
+                <div class="search-item search-guests">Add guests</div>
+                <div class="search-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="display:block;fill:none;height:16px;width:16px;stroke:currentColor;stroke-width:4;overflow:visible" aria-hidden="true" role="presentation" focusable="false"><path fill="none" d="M13 24a11 11 0 1 0 0-22 11 11 0 0 0 0 22zm8-3 9 9"></path></svg>
+                </div>
+              </div>
+              
+              <!-- Expanded Search (hidden by default) -->
+               
+              
+              <!-- Guest Selector (hidden by default) -->
+              <div class="guest-selector">
+                <div class="guest-category">
+                  <div class="guest-type-info">
+                    <div class="guest-type-title">Adults</div>
+                    <div class="guest-type-subtitle">Ages 13 or above</div>
+                  </div>
+                  <div class="guest-controls">
+                    <button class="guest-count-btn" id="adult-minus" disabled>-</button>
+                    <span class="guest-count" id="adult-count">0</span>
+                    <button class="guest-count-btn" id="adult-plus">+</button>
+                  </div>
+                </div>
+                <div class="guest-category">
+                  <div class="guest-type-info">
+                    <div class="guest-type-title">Children</div>
+                    <div class="guest-type-subtitle">Ages 2–12</div>
+                  </div>
+                  <div class="guest-controls">
+                    <button class="guest-count-btn" id="children-minus" disabled>-</button>
+                    <span class="guest-count" id="children-count">0</span>
+                    <button class="guest-count-btn" id="children-plus">+</button>
+                  </div>
+                </div>
+                <div class="guest-category">
+                  <div class="guest-type-info">
+                    <div class="guest-type-title">Infants</div>
+                    <div class="guest-type-subtitle">Under 2</div>
+                  </div>
+                  <div class="guest-controls">
+                    <button class="guest-count-btn" id="infant-minus" disabled>-</button>
+                    <span class="guest-count" id="infant-count">0</span>
+                    <button class="guest-count-btn" id="infant-plus">+</button>
+                  </div>
+                </div>
+                <div class="guest-category">
+                  <div class="guest-type-info">
+                    <div class="guest-type-title">Pets</div>
+                    <div class="guest-type-subtitle">Bringing a service animal?</div>
+                  </div>
+                  <div class="guest-controls">
+                    <button class="guest-count-btn" id="pet-minus" disabled>-</button>
+                    <span class="guest-count" id="pet-count">0</span>
+                    <button class="guest-count-btn" id="pet-plus">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- User Navigation -->
+            <div class="user-nav">
+              <button class="host-btn">Airbnb your home</button>
+              <button class="globe-btn" id="globe">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 16px; width: 16px; fill: currentcolor;"><path d="M8 .25a7.77 7.77 0 0 1 7.75 7.78 7.75 7.75 0 0 1-7.52 7.72h-.25A7.75 7.75 0 0 1 .25 8.24v-.25A7.75 7.75 0 0 1 8 .25zm1.95 8.5h-3.9c.15 2.9 1.17 5.34 1.88 5.5H8c.68 0 1.72-2.37 1.93-5.23zm4.26 0h-2.76c-.09 1.96-.53 3.78-1.18 5.08A6.26 6.26 0 0 0 14.17 9zm-9.67 0H1.8a6.26 6.26 0 0 0 3.94 5.08 12.59 12.59 0 0 1-1.16-4.7l-.03-.38zm1.2-6.58-.12.05a6.26 6.26 0 0 0-3.83 5.03h2.75c.09-1.83.48-3.54 1.06-4.81zm2.25-.42c-.7 0-1.78 2.51-1.94 5.5h3.9c-.15-2.9-1.18-5.34-1.89-5.5h-.07zm2.28.43.03.05a12.95 12.95 0 0 1 1.15 5.02h2.75a6.28 6.28 0 0 0-3.93-5.07z"></path></svg>
+              </button>
+              <div class="user-menu">
+                <svg class="menu-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px;">
+                  <path d="M2 16h28M2 8h28M2 24h28" stroke="#222222" stroke-width="3" stroke-linecap="round"></path>
+                </svg>
+                <div class="user-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 100%; width: 100%; fill: currentcolor;"><path d="M16 .7C7.56.7.7 7.56.7 16S7.56 31.3 16 31.3 31.3 24.44 31.3 16 24.44.7 16 .7zm0 28c-4.02 0-7.6-1.88-9.93-4.81a12.43 12.43 0 0 1 6.45-4.4A6.5 6.5 0 0 1 9.5 14a6.5 6.5 0 0 1 13 0 6.51 6.51 0 0 1-3.02 5.5 12.42 12.42 0 0 1 6.45 4.4A12.67 12.67 0 0 1 16 28.7z"></path></svg>
+                </div>
+                
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu">
+                  <div class="dropdown-section">
+                    <div class="dropdown-item login-trigger">Sign up</div>
+                    <div class="dropdown-item login-trigger">Log in</div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-section">
+                    <div class="dropdown-item">Airbnb your home</div>
+                    <div class="dropdown-item">Host an experience</div>
+                    <div class="dropdown-item">Help Centre</div>
+                  </div>
+                </div>
+                <!-- End Dropdown Menu -->
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="main">
+        <h2 class="heading">StayVista at Desert Palms in Anjar-Kutch w/t Pool</h2>
+        <div class="share">
+
+            <div class="share">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;"><path d="m27 18v9c0 1.1046-.8954 2-2 2h-18c-1.10457 0-2-.8954-2-2v-9m11-15v21m-10-11 9.2929-9.29289c.3905-.39053 1.0237-.39053 1.4142 0l9.2929 9.29289" fill="none"></path></svg>
+                <a href="">Share</a>
+            </div>
+            <div class="share">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path></svg>
+                <a href="">Save</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="images">
+        <div class="main-img">
+            <img src="Images/img1.avif" width="550px" alt="">
+        </div>
+        <div class="image">
+            <div class="img1">
+                <img src="Images/img2.avif" alt="">
+            </div>
+            <div class="img2">
+                <img src="Images/img3.avif" alt="">
+            </div>
+        </div>
+        <div class="img">
+
+            <div class="img1">
+                <img src="Images/img2.avif" alt="">
+            </div>
+            <div class="img2">
+                <img src="Images/img3.avif" alt="">
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Reservation Box -->
+    <div class="reservation-box">
+      <div class="price-info">
+        ₹85,240 <span>for 5 nights</span>
+      </div>
+      
+      <div class="date-picker-container">
+        <div class="date-row">
+          <div class="date-input" id="checkInInput">
+            <div class="date-label">CHECK-IN</div>
+            <div class="date-value">5/3/2025</div>
+          </div>
+          <div class="date-input" id="checkOutInput">
+            <div class="date-label">CHECKOUT</div>
+            <div class="date-value">5/8/2025</div>
+          </div>
+        </div>
+        
+        <!-- Calendar Container -->
+        <div class="calendar-container" id="calendarContainer">
+          <div class="calendar-header">
+            <button id="prevMonthBtn">&lt;</button>
+            <div class="calendar-month" id="currentMonth">May 2025</div>
+            <button id="nextMonthBtn">&gt;</button>
+          </div>
+          
+          <div class="calendar-grid">
+            <div class="calendar-weekday">S</div>
+            <div class="calendar-weekday">M</div>
+            <div class="calendar-weekday">T</div>
+            <div class="calendar-weekday">W</div>
+            <div class="calendar-weekday">T</div>
+            <div class="calendar-weekday">F</div>
+            <div class="calendar-weekday">S</div>
+            <!-- Calendar dates will be inserted here by JavaScript -->
+          </div>
+          
+          <div class="calendar-footer">
+            <button class="calendar-clear">Clear dates</button>
+            <button class="calendar-close">Close</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="guests-dropdown">
+        <div class="guests-label">GUESTS</div>
+        <div class="guests-value" id="guests-display">3 guests, 1 infant</div>
+        
+        <div class="guest-selector-dropdown">
+          <div class="guest-category">
+            <div class="guest-type-info">
+              <div class="guest-type-title">Adults</div>
+              <div class="guest-type-subtitle">Age 13+</div>
+            </div>
+            <div class="guest-controls">
+              <button class="guest-count-btn" id="adults-minus">−</button>
+              <span class="guest-count" id="adults-count">2</span>
+              <button class="guest-count-btn" id="adults-plus">+</button>
+            </div>
+          </div>
+
+          <div class="guest-category">
+            <div class="guest-type-info">
+              <div class="guest-type-title">Children</div>
+              <div class="guest-type-subtitle">Ages 2–12</div>
+            </div>
+            <div class="guest-controls">
+              <button class="guest-count-btn" id="children-minus">−</button>
+              <span class="guest-count" id="children-count">1</span>
+              <button class="guest-count-btn" id="children-plus">+</button>
+            </div>
+          </div>
+
+          <div class="guest-category">
+            <div class="guest-type-info">
+              <div class="guest-type-title">Infants</div>
+              <div class="guest-type-subtitle">Under 2</div>
+            </div>
+            <div class="guest-controls">
+              <button class="guest-count-btn" id="infants-minus">−</button>
+              <span class="guest-count" id="infants-count">1</span>
+              <button class="guest-count-btn" id="infants-plus">+</button>
+            </div>
+          </div>
+
+          <div class="guest-category">
+            <div class="guest-type-info">
+              <div class="guest-type-title">Pets</div>
+              <div class="guest-type-subtitle">Bringing a service animal?</div>
+            </div>
+            <div class="guest-controls">
+              <button class="guest-count-btn" id="pets-minus">−</button>
+              <span class="guest-count" id="pets-count">0</span>
+              <button class="guest-count-btn" id="pets-plus">+</button>
+            </div>
+          </div>
+
+          <div class="guest-info-text">
+            This place has a maximum of 15 guests, not including infants. Pets aren't allowed.
+          </div>
+          <div class="guest-selector-footer">
+            <button class="close-btn">Close</button>
+          </div>
+        </div>
+      </div>
+      
+      <button class="reserve-button">Reserve</button>
+      
+      <div class="charge-info">You won't be charged yet</div>
+    </div>
+  </body>
+</html>
