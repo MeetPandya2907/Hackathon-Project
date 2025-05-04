@@ -144,18 +144,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Login with phone number
-  continueBtn.addEventListener('click', () => {
-    // Validate phone number would be here in a real app
-    completeLogin();
-  });
+  // Login with phone number - this will be handled by Firebase now
+  if (continueBtn) {
+    continueBtn.removeEventListener('click', completeLogin);
+  }
 
-  // Social login buttons
+  // Social login buttons - these will be handled by Firebase now
   socialBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // In a real app, this would redirect to authentication
-      completeLogin();
-    });
+    btn.removeEventListener('click', completeLogin);
   });
 
   // Complete the login process
@@ -1086,6 +1082,19 @@ document.addEventListener('DOMContentLoaded', function() {
       };
     }
   }
+
+  // Listen for Firebase auth events
+  document.addEventListener('userLoggedIn', function(e) {
+    isLoggedIn = true;
+    if (currentClickedHeart) {
+      toggleHeartState(currentClickedHeart);
+      currentClickedHeart = null;
+    }
+  });
+  
+  document.addEventListener('userLoggedOut', function() {
+    isLoggedIn = false;
+  });
 });
 
 const globe= document.querySelector('#globe');
